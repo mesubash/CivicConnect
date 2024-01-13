@@ -150,7 +150,7 @@ form .buttons{
 form .buttons button , .backBtn{
     margin-right: 14px;
 }
-#gov_mv_set,#all_vef{
+#gov_mv_set,#all-vef{
     font-size: 10px;
     color: red;
 }
