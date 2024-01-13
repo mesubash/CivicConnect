@@ -20,7 +20,7 @@
         <form action="#">
             <div class="form first">
                 <div class="details personal">
-                    <span class="title">Personal Details</span>
+                    <p id="all-vef">* all the fields are rquired</p>
 
                     <div class="fields">
                         
@@ -37,7 +37,8 @@
 
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" placeholder="Enter mobile number" required>
+                            <input type="number" placeholder="Enter mobile number" id="gov_mv" required>
+                            <p id="gov_mv_set">*this field will be used to verify it is official sector</p>
                         </div>
                         <div class="input-field">
                             <label >Department/Sector</label>
@@ -65,28 +66,11 @@
                         </div>
 
                         <div class="input-field">
-                            <label>Provience</label>
-                            <select name="" id="">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                                <option value="">7</option>
-                            </select>
+                            <label>PAN id</label>
+                            <input type="text" required>
                         </div>
 
-                        <div class="input-field">
-                            <label>District</label>
-                            <input type="text" placeholder="Enter district" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Local Area</label>
-                            <input type="text" placeholder="Enter local area" required>
-                        </div>
-
+                      
                         
                     </div>
 
