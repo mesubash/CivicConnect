@@ -1,6 +1,6 @@
-@extends('Package.Navbar')
+@extends('layouts.Body')
 @section('Content')
-<div class="modal" id="myModal">
+<div class="modal" id="myModal" style="z-index: 1050">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -15,9 +15,10 @@
        <form
         method="POST"
         class="w-100 rounded p-4 border bg-white"
-        action=""
+        action="{{url('civiconnect/complain')}}"
         enctype="multipart/form-data"
       >
+      @csrf
         <label class="d-block mb-4">
           <span class="d-block mb-2">Subject</span>
           <input

@@ -6,8 +6,8 @@ use App\Models\register;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Discription;
 use Illuminate\Support\Facades\Hash;
-
 
 class LoginController extends Controller
 {
@@ -31,7 +31,7 @@ class LoginController extends Controller
 
         );
         $filename = $request->Name . '.' . $request->file('PhotName')->getClientOriginalExtension();
-        $request->file('PhotName')->store(public_path('uploads', $filename));
+        $request->file('PhotName')->storeAs(public_path('Uploads', $filename));
         $table = new register;
         $table->Name = $request->Name;
         $table->Email = $request->Email;

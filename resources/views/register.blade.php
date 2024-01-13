@@ -3,18 +3,17 @@
       @section('content')
   
    <!-- Pills navs -->
-  
    <div class="container">
     
     
 <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
   <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="" role="tab"
-      aria-controls="pills-login" aria-selected="true">Register</a>
+    <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+      aria-controls="pills-login" aria-selected="true">Login</a>
   </li>
   <li class="nav-item" role="presentation">
-    <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="{{url('civiconnect/login')}}" role="tab"
-      aria-controls="pills-register" aria-selected="false">Login</a>
+    <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="{{url('civiconnect/register')}}" role="tab"
+      aria-controls="pills-register" aria-selected="false">Register</a>
   </li>
 </ul>
 <!-- Pills navs -->
@@ -22,64 +21,50 @@
 <!-- Pills content -->
 <div class="tab-content">
   <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-<form method="POST" action="{{url('civiconnect/post')}}" enctype="multipart/form-data">
+    <form method="POST" action="{{url('civiconnect/check')}}">
     @csrf
       <!-- Email input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="loginName">Email:</label>
-        <input type="Email" id="loginName" class="form-control" placeholder="Enter Your Email" name="Email" value="{{old('Email')}}"/>
+        <input type="text" id="loginName" class="form-control" name="Email"/>
         @if($errors->has('Email'))
-        <div class="alert alert-danger" id='div1'>
-            {{$errors->first('Email')}}
-        </div>
+        <div class="alert alert-danger" id="div1">{{$errors->first('Email')}}</div>
         @endif
       </div>
+
+      <!-- Password input -->
       <div class="form-outline mb-4">
-        <label class="form-label" for="loginName">Password:</label>
-        <input type="password" id="loginName" class="form-control" placeholder="Enter Your Password" name="Password"/>
+         <label class="form-label" for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" class="form-control" name="Password" />
         @if($errors->has('Password'))
-        <div class="alert alert-danger" id='div2'>
-            {{$errors->first('Password')}}
-        </div>
+        <div class="alert alert-danger" id="div2">{{$errors->first('Password')}}</div>
         @endif
-      </div>
-      <div class="form-outline mb-4">
-        <label class="form-label" for="loginName">Name:</label>
-        <input type="text" id="loginName" class="form-control" placeholder="Enter Your  Birth Name name" name='Name'  value="{{old('Name')}}"/>
-      @if($errors->has('Name'))
-        <div class="alert alert-danger" id="div3">
-            {{$errors->first('Name')}}
-        </div>
-        @endif
-    </div>
-      <div class="form-outline mb-4">
-        <label class="form-label" for="loginName">ProfilePicture:</label>
-        <input type="file" id="loginName" class="form-control" placeholder="EnterYouProfilePicture" name="PhotName"/>
+        
     
-    @if($errors->has('PhotName'))
-        <div class="alert alert-danger" id="div4">
-            
+      </div>
 
-            {{$errors->first('PhotName')}}
-        </div>
-        @endif
-    </div>
+      <button type="submit" class="btn btn-success btn-block mb-4">Sign in</button>
 
-      <button type="submit" class="btn btn-success btn-block mb-4">Register</button>
- </form>
       <!-- Register buttons -->
       <div class="text-center">
-        <p>Already a member? <a href="{{url('civiconnect/login')}}">Login</a></p>
+        <p>Not a member? <a href="{{url('civiconnect/register')}}">Register</a></p>
       </div>
-    
-   <script>
+    </form>
+  </div>
+  @if(session('Success'))
+  <div class="alert alert-success" id="div1">{{session('Success')}}</div>
+  @endif
+  @if($errors->has('error'))
+  <div class="alert alert-danger" id="div3">{{$errors->first('error')}}</div>
+  @endif
+  
+  <script>
     jQuery(document).ready(function()
     {
      setTimeout(() => {
         jQuery('#div1').hide('fast');
         jQuery('#div2').hide('fast');
         jQuery('#div3').hide('fast');
-        jQuery('#div4').hide('fast');
         
 
      }, 1000);
@@ -87,5 +72,5 @@
 
    </script>
 
-  
   @endsection
+  
