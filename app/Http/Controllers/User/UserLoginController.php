@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\User;
 
 use App\Models\register;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Discription;
 use Illuminate\Support\Facades\Hash;
 
-class LoginController extends Controller
+class UserLoginController extends Controller
 {
     public function login()
     {
-        return view('login');
+        return view('User.UserLogin');
     }
     public function register()
     {
-        return view('register');
+        return view('User.UserRegister');
     }
     public function post(Request $request)
     {
@@ -31,7 +30,7 @@ class LoginController extends Controller
 
         );
         $filename = $request->Name . '.' . $request->file('PhotName')->getClientOriginalExtension();
-        $request->file('PhotName')->storeAs(public_path('Uploads', $filename));
+        $request->file('PhotName')->move(public_path('Uploads', $filename));
         $table = new register;
         $table->Name = $request->Name;
         $table->Email = $request->Email;
@@ -48,7 +47,7 @@ class LoginController extends Controller
         ]);
         $data = register::where('Email', $request->Email)->get();
         if (Hash::check($request->Password, $data[0]->Password)) {
-            return view('Homepage');
+            return view('UserHomepage');
         } else {
             return redirect()->back()->withErrors(['Email' => "Email didn't match", 'Password' => "Password did'nt match"]);
         }

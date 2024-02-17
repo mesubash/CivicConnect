@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Complain;
 
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 use function Ramsey\Uuid\v1;
 
-class EmployeeHomepageController extends Controller
+class AdminHomepageController extends Controller
 {
     public function eshow()
     {

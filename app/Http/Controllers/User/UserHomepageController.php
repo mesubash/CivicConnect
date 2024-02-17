@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Complain;
 
 use Illuminate\Http\Request;
 
-class HomepageController extends Controller
+class UserHomepageController extends Controller
 {
 
     public function show()
     {
-        $data = Complain::all();
-        $datas = compact('data');
-        return view('HomePage')->with($datas);
+        // $data = Complain::all();
+        // $datas = compact('data');
+        // return view('UserHomePage')->with($datas);
+        return view('User.UserHomePage');
     }
     public function complain()
     {
@@ -24,7 +25,7 @@ class HomepageController extends Controller
     {
         $table = new Complain;
         $filename = $request->Name . '.' . $request->file('Photo')->getClientOriginalExtension();
-        $request->file('Photo')->storeAs(public_path('Uploads', $filename));
+        $request->file('Photo')->move(public_path('Uploads', $filename));
         $table->Name = $request->Name;
         $table->Description = $request->Description;
         $table->Photo = $filename;

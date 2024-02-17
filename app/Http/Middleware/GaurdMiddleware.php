@@ -16,7 +16,7 @@ class GaurdMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $pathname = $request->path();
-        if ($pathname == 'civiconnect/homepage') {
+        if ($pathname == 'civiconnect/home') {
             session()->put('display', 'unhide');
         }
 

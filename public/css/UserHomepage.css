@@ -1,0 +1,63 @@
+/* Styling for the main feed */
+.main-feed {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Styling for each post item */
+.main-feed-item {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for post header */
+.common-post-header {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-image {
+    border-radius: 50%;
+}
+
+.user-and-group {
+    margin-bottom: 5px;
+}
+
+/* Styling for post content */
+.common-post-content {
+    padding: 10px;
+}
+
+.common-post-content p {
+    margin-bottom: 10px;
+}
+
+/* Styling for action buttons */
+.actions-buttons {
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.actions-buttons-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.actions-buttons-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.actions-buttons-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.icon {
+    margin-right: 5px;
+}

@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Frontend\LoginController;
-use App\Http\Controllers\Frontend\HomepageController;
-use App\Http\Controllers\Frontend\EmployeeLoginController;
-use App\Http\Controllers\Frontend\EmployeeHomepageController;
+use App\Http\Controllers\User\UserLoginController;
+use App\Http\Controllers\User\UserHomepageController;
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminHomepageController;
 
 
 /*
@@ -21,21 +21,19 @@ use App\Http\Controllers\Frontend\EmployeeHomepageController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'civiconnect', 'middleware' => 'gaurd'], function () {
-    // form regsitartion and logimpn
-    Route::get('/login', [LoginController::class, 'login']);
-    Route::get('/register', [LoginController::class, 'register']);
-    Route::post('/post', [LoginController::class, 'post']);
-    Route::post('/check', [LoginController::class, 'Check']);
-    Route::post('/check', [LoginController::class, 'Check']);
+Route::group(['prefix' => 'civiconnect'], function () {
+    // form regsitartion and login
+    Route::get('/login', [UserLoginController::class, 'login']);
+    Route::get('/register', [UserLoginController::class, 'register']);
+    Route::post('/post', [UserLoginController::class, 'post']);
+    Route::post('/check', [UserLoginController::class, 'Check']);
 
-    // Homepage
-    Route::get('/homepage', [HomepageController::class, 'show']);
-    Route::get('/complain', [HomepageController::class, 'complain']);
-    Route::post('/complain', [HomepageController::class, 'complainstore']);
 
-    //Homepage Employee
+    Route::get('/homepage', [UserHomepageController::class, 'show']);
+    Route::get('/complain', [UserHomepageController::class, 'complain']);
+    Route::post('/complain', [UserHomepageController::class, 'complainstore']);
 
-    Route::get('/ehomepage', [EmployeeHomepageController::class, 'eshow']);
-    Route::get('/avote/{id}', [EmployeeHomepageController::class, 'addvote']);
+
+    Route::get('/ehomepage', [AdminHomepageController::class, 'eshow']);
+    Route::get('/avote/{id}', [AdminHomepageController::class, 'addvote']);
 });
