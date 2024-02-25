@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</head>
-
-<body>
+@extends('layouts.Frame')
+    @section('main')
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" style="font-family:monospace; font-size:30px">CivicConnect(Official)</a>
+        <a class="navbar-brand" style="font-family:monospace; font-size:30px">CivicConnect</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,15 +10,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;DataRecords<span
+                    <a class="nav-link" href="{{route('user.homepage')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Home<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Statitics</a>
+                    <a class="nav-link" href="" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;AboutUs
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" data-toggle="modal" data-target="#myModal"
-                        style="font-family: monospace; font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;Respond</button>
+                    <a class="nav-link" href="#" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ContactUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('user.complain')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Complain</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="#" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Blog</a>
@@ -64,25 +41,28 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="photoModalLabel">Employee Profile</h5>
+                    <h5 class="modal-title" id="photoModalLabel">User's Profile</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <ul>
-                   <li> <a href="" class="btn btn-info m-2">Register As User</a></li>
-                   <li> <a href="" class="btn btn-success m-2">Login As User</a></li>
+                   <li> <a href="" class="btn btn-info m-2">Register As Admin</a></li>
+                   <li> <a href="" class="btn btn-success m-2">Login As Admin</a></li>
                    <li> <a href="" class="btn btn-danger m-2">LogOut</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
+            @yield('navbar')
+    @endsection
+       @section('script')
         function openModal() {
             $('#photoModal').modal('show');
             
         }
-    </script>
+        @endsection
+        
+   

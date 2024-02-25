@@ -1,6 +1,8 @@
-@include('layouts.AdminNavbar')
-
-<link href="{{ asset('css/UserHomepage.css') }}" rel="stylesheet">
+@extends('layouts.UserNavbar')
+      @section('style')
+         <link href="{{ asset('css/UserHomepage.css') }}" rel="stylesheet">
+       @endsection
+          @section('navbar')
 
   
 {{-- <div class="common-structure">
@@ -84,7 +86,7 @@
       </ul>
      
     </section> -->
-  </aside>
+  {{-- </aside> --}}
   <main class="main-feed">
     <ul class="main-feed-list">
       <li class="main-feed-item">
@@ -265,7 +267,8 @@
         </article>
       </li>
     
-  </main>
+     </main>
+  @endsection
   {{-- <aside class="side-b">
     <section class="common-section">
       <h2 class="section-title">Topics</h2>

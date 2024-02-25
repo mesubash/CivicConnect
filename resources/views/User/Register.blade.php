@@ -1,6 +1,5 @@
 @extends('File.file')
   
-      @section('content')
   
    <!-- Pills navs -->
   
