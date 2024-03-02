@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ContactUs</a>
+                    <a class="nav-link" href="{{route('user.contactus')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ContactUs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('user.complain')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Complain</a>
@@ -49,6 +49,7 @@
                 <div class="modal-body">
                     <ul>
                    <li> <a href="" class="btn btn-info m-2">Register As Admin</a></li>
+                   <li> <a href="" class="btn btn-primary m-2">View Profile</a></li>
                    <li> <a href="" class="btn btn-success m-2">Login As Admin</a></li>
                    <li> <a href="" class="btn btn-danger m-2">LogOut</a></li>
                     </ul>
