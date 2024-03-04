@@ -1,6 +1,6 @@
 @extends('layouts.Frame')
     @section('main')
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary" style="position: -webkit-sticky; position: sticky; top: 0;z-index:1020;">
         <a class="navbar-brand" style="font-family:monospace; font-size:30px">CivicConnect</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

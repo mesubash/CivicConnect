@@ -13,7 +13,7 @@
   <p class="lead bg-dark text-danger">Achieving Sustainablity development</p>
 </div>
 
-<h2 style="text-align:center">Our Team</h2>
+<h2 style="text-align:center" class="display-3 text-secondary">Our Team</h2>
 <div class="row">
   <div class="column">
     <div class="card">
