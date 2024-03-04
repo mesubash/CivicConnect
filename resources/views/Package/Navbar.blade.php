@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="en">
 
 <head>
@@ -34,10 +34,10 @@
 
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="{{url('civiconnect/complain')}}"data-toggle="modal" data-target="#myModal" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Complain</a>
+        <a class="nav-link" href="{{route('user.complain')}}"data-toggle="modal" data-target="#myModal" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Complain</a>
     
       </li>
-      
+       --}}
       {{-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
@@ -49,7 +49,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li> --}}
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link " href="#" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Blog</a>
       </li>
     </ul>
@@ -63,4 +63,4 @@
 @yield('Content')
 </body>
 
-</html>
+</html> --}}

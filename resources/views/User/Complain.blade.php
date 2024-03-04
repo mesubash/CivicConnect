@@ -14,6 +14,9 @@
     #p:hover{
         opacity: 0.6;
     }
+    body{
+      background-color: #f8f9fa;
+    }
     </style>
       
        <center><marquee scrollamount="35"><p class="lead" id="p">Note:Your complain are strcitly monitored please donot wrtie unecessary complain</p></center></marquee>

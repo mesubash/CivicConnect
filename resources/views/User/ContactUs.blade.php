@@ -1,13 +1,12 @@
 @extends('layouts.UserNavbar')
    @section('style')
    <link href="{{ asset('css/UserContactUs.css') }}" rel="stylesheet">
-   <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/contacts/contact-1/assets/css/contact-1.css">
     @endsection
     
     @section('navbar')
 
- <section class=" bg-white py-3 py-md-5">
+ <section class=" bg-light py-3 py-md-5">
    <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -57,7 +56,7 @@
               </div>
               <div class="col-12">
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-lg text-dark " type="submit">Submit</button>
+                  <button class="btn btn-primary btn-md text-dark " type="submit">Submit</button>
                 </div>
               </div>
             </div>

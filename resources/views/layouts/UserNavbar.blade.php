@@ -1,6 +1,6 @@
 @extends('layouts.Frame')
     @section('main')
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <a class="navbar-brand" style="font-family:monospace; font-size:30px">CivicConnect</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;AboutUs
+                    <a class="nav-link" href="{{route('user.aboutus')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;AboutUs
                     </a>
                 </li>
                 <li class="nav-item">
@@ -33,7 +33,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </form>
             @endif
-            <img src="" class="rounded-circle" height="40" width="40" id="modalTrigger" onclick="openModal()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="{{ asset('image/ignito.png') }}" class="rounded-circle" height="40" width="40" id="modalTrigger" onclick="openModal()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </nav>
     <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel"
