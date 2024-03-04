@@ -50,7 +50,7 @@
                     <ul>
                    <li> <a href="" class="btn btn-info m-2">Register As Admin</a></li>
                    <li> <a href="" class="btn btn-primary m-2">View Profile</a></li>
-                   <li> <a href="" class="btn btn-success m-2">Login As Admin</a></li>
+                   <li> <a href="{{route('user.login')}}" class="btn btn-success m-2">Login As Admin</a></li>
                    <li> <a href="" class="btn btn-danger m-2">LogOut</a></li>
                     </ul>
                 </div>
