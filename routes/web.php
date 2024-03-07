@@ -6,6 +6,7 @@ use App\Http\Controllers\User\ComplainController;
 use App\Http\Controllers\User\ContactUsController;
 use App\Http\Controllers\User\AboutUsController;
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\RegistrationContorller;
 
 Route::group(['prefix' => 'user'], function () {
     Route::get('/home', [HomepageController::class, 'index'])->name('user.homepage');
@@ -13,4 +14,5 @@ Route::group(['prefix' => 'user'], function () {
     Route::get("/contactus", [ContactUsController::class, 'index'])->name('user.contactus');
     Route::get("/aboutus", [AboutUsController::class, 'index'])->name("user.aboutus");
     Route::get("/login", [LogInController::class, 'user'])->name('user.login');
+    Route::get("/register", [RegistrationContorller::class, 'user'])->name('user.register');
 });

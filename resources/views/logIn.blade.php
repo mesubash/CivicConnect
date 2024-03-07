@@ -18,6 +18,8 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+      <br>
+     <p> Not Registered?<a href="{{route('user.register')}}">Click Here</a></p>
       <p class="mt-5 mb-3 text-muted">&copy; 2022-2024</p>
     </form>
 </div>

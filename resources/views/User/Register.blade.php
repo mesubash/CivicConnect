@@ -1,90 +1,66 @@
-@extends('File.file')
-  
-  
-   <!-- Pills navs -->
-  
-   <div class="container">
-    
-    
-<ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="javascript:void(0)" role="tab"
-      aria-controls="pills-login" aria-selected="true">Register</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="{{url('civiconnect/login')}}" role="tab"
-      aria-controls="pills-register" aria-selected="false">Login</a>
-  </li>
-</ul>
-<!-- Pills navs -->
 
-<!-- Pills content -->
-<div class="tab-content">
-  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-<form method="POST" action="{{url('civiconnect/post')}}" enctype="multipart/form-data">
-    @csrf
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <label class="form-label" for="loginName">Email:</label>
-        <input type="Email" id="loginName" class="form-control" placeholder="Enter Your Email" name="Email" value="{{old('Email')}}"/>
-        @if($errors->has('Email'))
-        <div class="alert alert-danger" id='div1'>
-            {{$errors->first('Email')}}
-        </div>
-        @endif
-      </div>
-      <div class="form-outline mb-4">
-        <label class="form-label" for="loginName">Password:</label>
-        <input type="password" id="loginName" class="form-control" placeholder="Enter Your Password" name="Password"/>
-        @if($errors->has('Password'))
-        <div class="alert alert-danger" id='div2'>
-            {{$errors->first('Password')}}
-        </div>
-        @endif
-      </div>
-      <div class="form-outline mb-4">
-        <label class="form-label" for="loginName">Name:</label>
-        <input type="text" id="loginName" class="form-control" placeholder="Enter Your  Birth Name name" name='Name'  value="{{old('Name')}}"/>
-      @if($errors->has('Name'))
-        <div class="alert alert-danger" id="div3">
-            {{$errors->first('Name')}}
-        </div>
-        @endif
+   @extends('layouts.frame')
+@section('style')
+ <link rel="stylesheet" href="{{asset('css/LogIn.css')}}">
+@endsection
+@section('main')
+  <body class="text-center">
+    <div class="card">
+    <form class="form-signin">
+      <img class="mb-4 rounded" src="{{asset('image/GovImage.jpeg')}}" alt="" width="250" height="150">
+      <h1 class="h3 mb-3 font-weight-normal text-danger">User Registration</h1>
+       <div class="form-row">
+    <div class="form-group col-6">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"  class="Name"placeholder="Name">
     </div>
-      <div class="form-outline mb-4">
-        <label class="form-label" for="loginName">ProfilePicture:</label>
-        <input type="file" id="loginName" class="form-control" placeholder="EnterYouProfilePicture" name="PhotoName"/>
-    
-    @if($errors->has('PhotoName'))
-        <div class="alert alert-danger" id="div4">
-            
-
-            {{$errors->first('PhotoName')}}
-        </div>
-        @endif
+    <div class="form-group col-6">
+      <label for="Surname">Surname</label>
+      <input type="text" class="form-control" id="surname" placeholder="Surname" class="Surname">
     </div>
+  </div> 
+  <div class="form-row">
+  <div class="form-group col-6">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" class="Address">
+  </div>
+  <div class="form-group col-6">
+      <label for="inputState">Ward No</label>
+      <select id="inputState" class="form-control" name="Ward">
+        <option selected>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="Email">Email</label>
+      <input type="email" class="form-control" id="Email"  name="Email"placeholder="Your Email">
+    </div>
+    <div class="form-group col-md-12">
+      <label for="Password">Password</label>
+      <input type="password" class="form-control" id="Password" placeholder="Your Password" name="Password">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-danger mb-5">Register</button>
+    </form>
+      <p>Already Registered <a href="{{route('user.login')}}" class="form-group">Click Here</a> </p>
+</div>
+  </body>
+@endsection
+  
+  
 
-      <button type="submit" class="btn btn-success btn-block mb-4">Register</button>
- </form>
-      <!-- Register buttons -->
-      <div class="text-center">
-        <p>Already a member? <a href="{{url('civiconnect/login')}}">Login</a></p>
-      </div>
-    
-   <script>
-    jQuery(document).ready(function()
-    {
-     setTimeout(() => {
-        jQuery('#div1').hide('fast');
-        jQuery('#div2').hide('fast');
-        jQuery('#div3').hide('fast');
-        jQuery('#div4').hide('fast');
-        
 
-     }, 1000);
-    });
 
-   </script>
+
+
+
+
 
   
-  @endsection
+  
