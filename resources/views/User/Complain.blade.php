@@ -1,5 +1,5 @@
 @extends('layouts.UserNavbar')
-@section('navbar')
+@section('style')
 <style>
     #btn1{
         position: relative;
@@ -18,7 +18,9 @@
       background-color: #f8f9fa;
     }
     </style>
-      
+  @endsection
+   
+     @section('navbar')
        <center><marquee scrollamount="35"><p class="lead" id="p">Note:Your complain are strcitly monitored please donot wrtie unecessary complain</p></center></marquee>
          <hr>
     
@@ -44,10 +46,22 @@
                 <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" id=""> 
             </div>
-          <form enctype="multipart/form-data" id="form">
             <div class="form-group">
-                <label for="name">Tile</label>
+                <label for="title">Name</label>
                 <input type="text" class="form-control" name="title" id=""> 
+            </div>
+            <div class="form-group">
+               <label for="category">Category</label>
+                <select id="category" class="form-control" name="category">
+                    <option selected>Management</option>
+                     <option>Road Infrastructure</option>
+                     <option>Food and Water</option>
+                     <option>Health and Sanitaion</option>
+                     <option>Transprotation</option>
+                    <option>Social Security</option>
+                    <option>All</option>
+                     <option>Others</option>
+                </select>
             </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Problem Description</label>
@@ -61,6 +75,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button id="btn" class="btn btn-success">Submit</button>
+      </form>
       </div>
     </div>
   </div>

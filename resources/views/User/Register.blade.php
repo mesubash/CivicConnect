@@ -11,18 +11,18 @@
       <h1 class="h3 mb-3 font-weight-normal text-danger">User Registration</h1>
        <div class="form-row">
     <div class="form-group col-6">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name"  class="Name"placeholder="Name">
+      <label for="name">Firstname</label>
+      <input type="text" class="form-control" id="name" placeholder="Firstname" name="Firstname">
     </div>
     <div class="form-group col-6">
       <label for="Surname">Surname</label>
-      <input type="text" class="form-control" id="surname" placeholder="Surname" class="Surname">
+      <input type="text" class="form-control" id="surname" placeholder="Surname" name="Surname"  >
     </div>
   </div> 
   <div class="form-row">
   <div class="form-group col-6">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" class="Address">
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="Address">
   </div>
   <div class="form-group col-6">
       <label for="inputState">Ward No</label>
@@ -37,18 +37,26 @@
     </div>
   </div>
     <div class="form-row">
-    <div class="form-group col-md-12">
+    <div class="form-group col-6">
       <label for="Email">Email</label>
       <input type="email" class="form-control" id="Email"  name="Email"placeholder="Your Email">
     </div>
-    <div class="form-group col-md-12">
+    <div class="form-group col-6">
       <label for="Password">Password</label>
       <input type="password" class="form-control" id="Password" placeholder="Your Password" name="Password">
     </div>
+     <div class="form-group col-6">
+            <label for="Phonenumber">Your Number</label>
+           <input type="text" class="form-control" id="Phonenumber" name="Phonenumber" placeholder="Your Number">
+          </div>
+    <div class="form-group col-6">
+            <label for="exampleFormControlFile1">Your Photo</label>
+           <input type="file" class="form-control-photo" id="exampleFormControlFile1" name="Image">
+          </div>
   </div>
   <button type="submit" class="btn btn-outline-danger mb-5">Register</button>
     </form>
-      <p>Already Registered <a href="{{route('user.login')}}" class="form-group">Click Here</a> </p>
+      <p>Already Registered? <a href="{{route('user.login')}}" class="form-group">Click Here</a> </p>
 </div>
   </body>
 @endsection
