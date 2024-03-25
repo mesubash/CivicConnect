@@ -1,4 +1,4 @@
-@extends('layouts.UserNavbar')
+@extends('layouts.app')
 @section('style')
 <style>
     #btn1{
@@ -20,7 +20,7 @@
     </style>
   @endsection
    
-     @section('navbar')
+     @section('content')
        <center><marquee scrollamount="35"><p class="lead" id="p">Note:Your complain are strcitly monitored please donot wrtie unecessary complain</p></center></marquee>
          <hr>
     
@@ -30,7 +30,7 @@
         </center>
     
 
-<!-- Modal -->
+
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -47,7 +47,7 @@
                 <input type="text" class="form-control" name="name" id=""> 
             </div>
             <div class="form-group">
-                <label for="title">Name</label>
+                <label for="title">Title</label>
                 <input type="text" class="form-control" name="title" id=""> 
             </div>
             <div class="form-group">

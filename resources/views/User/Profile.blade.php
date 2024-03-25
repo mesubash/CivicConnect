@@ -1,9 +1,9 @@
-@extends('Layouts.UserNavbar')
+@extends('Layouts.app')
  @section('style')
  <link href="{{ asset('css/UserProfile.css') }}" rel="stylesheet">
  @endsection
 
- @section('navbar')
+ @section('content')
  <div class="container">
 <div class="row gutters">
 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
@@ -14,14 +14,14 @@
 				<div class="user-avatar">
 					<img  src="{{asset('image/GovImage.jpeg')}}"  alt="Maxwell Admin" id="myImg" class="rounded-circle border border-primary">
 				</div>
-				<h5 class="user-name text-info">Yuki Hayashi</h5>
-				<h6 class="user-email">yuki@Maxwell.com</h6>
+				<h5 class="user-name text-info">{{Auth::user()->name}}</h5>
+				<h6 class="user-email">{{Auth::user()->email}}</h6>
 			</div>
 			<div class="about">
 				<h5 class="lead text-danger">Complain Registration list</h5>
 			</div>
             <ul class="list-group">
-                <li class="list-group-item list-group-item-success" data-toggle="modal" data-target="#exampleModal">Cras justo odio</li>
+                <li class="list-group-item list-group-item-success list-group-item-action" data-toggle="modal" data-target="#exampleModal">Cras justo odio</li>
                 <li class="list-group-item list-group-item-action list-group-item-success" data-toggle="modal" data-target="#exampleModal" >Dapibus ac facilisis in</li>
                 <li class="list-group-item list-group-item-action list-group-item-success" data-toggle="modal" data-target="#exampleModal">Morbi leo risus</li>
                 <li class="list-group-item list-group-item-action list-group-item-danger"data-toggle="modal" data-target="#exampleModal">Porta ac consectetur ac</li>
@@ -32,7 +32,7 @@
 </div>
 </div>
 <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
-<div class="card h-100">
+<div class="card h-80">
 	<div class="card-body">
 		<div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -53,7 +53,7 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="eMail">Email</label>
-					<input type="email" class="form-control" id="eMail" placeholder=" Email" name="Email">
+					<input type="email" class="form-control" id="eMail" placeholder=" Email" name="Email" value="{{Auth::user()->email}}">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -116,6 +116,10 @@
                 <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" id=""> 
             </div>
+			<div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" id=""> 
+            </div>
             <div class="form-group">
                 <label for="category">Category</label>
                 <select id="category" class="form-control" name="Category">
@@ -153,7 +157,7 @@
  @endsection
    <!-- Photo popup -->
  <div id="myModal" class="modal1">
-  <span class="close">&times;</span>
+  <span class="close1">&times;</span>
   <img class="modal-content1" id="img01">
   <div id="caption1"></div>
 </div>
@@ -173,11 +177,15 @@ img.onclick = function(){
 }
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close1")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() { 
   modal.style.display = "none";
 }
+ function openModal() {
+            $('#photoModal2').modal('show');
+            
+        }
 </script>
 @endsection

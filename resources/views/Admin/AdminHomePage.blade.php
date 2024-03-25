@@ -1,4 +1,4 @@
-@extends("layouts.GovBody")
+{{-- @extends("layouts.GovBody")
 @section('Content') 
 
 <div class="table-container m-1">
@@ -8,12 +8,12 @@
       <tr>
         <th scope="col-lg">TopVotedIssue</th>
         <th scope="col">Description</th>
-        <th scope="col">No of voted</th>
+        <th scope="col">No of voted</th> --}}
         {{-- <th scope="col">Photo</th>
         <th scope="col">Complain_Id</th>
         <th scope="col">RegsTimeStamp</th>
         <th scope="col">Modify</th> --}}
-      </tr>
+      {{-- </tr>
     </thead>
     <tbody>
       @foreach($data as $item)
@@ -27,4 +27,4 @@
     </tbody>
   </table>
 </div>
-@endsection
+@endsection --}}

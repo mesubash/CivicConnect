@@ -1,10 +1,10 @@
-@extends('layouts.UserNavbar')
+@extends('layouts.app')
    @section('style')
    <link href="{{ asset('css/UserContactUs.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/contacts/contact-1/assets/css/contact-1.css">
     @endsection
     
-    @section('navbar')
+    @section('content')
 
  <section class=" bg-light py-3 py-md-5">
    <div class="container">

@@ -1,10 +1,10 @@
-  @extends('layouts.UserNavbar')
+  @extends('layouts.app')
   @section('style')
      <link href="{{ asset('css/AboutUs.css') }}" rel="stylesheet">
     
    @endsection  
   
-  @section('navbar')
+  @section('content')
   <div class="about-section bg-light">
   <h1 class="display-4 text-secondary p-3">Our Vision </h1>
   <p class="lead bg-dark text-danger">Including people and government in development through parallel process</p>

@@ -1,10 +1,8 @@
-@extends('layouts.UserNavbar')
+ @extends('layouts.app')
       @section('style')
          <link href="{{ asset('css/UserHomepage.css') }}" rel="stylesheet">
        @endsection
-          @section('navbar')
-
-  
+          @section('content')
 {{-- <div class="common-structure">
       
   <aside class="side-a">
@@ -66,7 +64,7 @@
         </li>
       </ul>
 
-    </section> --}}
+    </section>  --}}
     <!-- <section class="common-section">
       <h2 class="section-title">Shortcuts</h2>
       <ul class="common-list">
@@ -87,7 +85,7 @@
      
     </section> -->
   {{-- </aside> --}}
-  <main class="main-feed">
+   <main class="main-feed">
     <ul class="main-feed-list">
       <li class="main-feed-item">
         <article class="common-post">
@@ -110,7 +108,7 @@
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex asperiores quas tenetur vero nemo iste, soluta enim mollitia odio quaerat. Iusto, eaque! Rem magnam rerum exercitationem dolore magni minus provident.
             </p>
           </div>
-         
+         @auth
           <section class="actions-buttons">
             <ul class="actions-buttons-list u-flex">
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">👍</span><span class="text">Up Vote</span></button></li>
@@ -119,6 +117,7 @@
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">💌</span><span class="text">Share</span></button></li>
             </ul>
           </section>
+          @endauth
         </article>
       </li>
 
@@ -138,7 +137,7 @@
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime nihil qui dignissimos voluptatibus aperiam voluptatem ipsa illum facere sint, dolorem provident rem id beatae voluptate officia corrupti nam iste, odit quas dolorum quidem molestias et suscipit quod! Libero in beatae consequatur, velit enim quis molestias sit accusamus aliquam explicabo minus nobis aspernatur, asperiores iusto consectetur animi possimus molestiae eius aliquid. Fugit provident quos blanditiis nisi perferendis animi laudantium perspiciatis ipsa non cum, numquam debitis error suscipit aliquid soluta nobis! Saepe explicabo, recusandae, veniam odio pariatur, quia aspernatur nihil quibusdam assumenda vel sapiente praesentium atque nesciunt non eligendi ipsam quaerat harum?
             </p>   
           </div>
-         
+         @auth
           <section class="actions-buttons">
             <ul class="actions-buttons-list u-flex">
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">👍</span><span class="text">Up Vote</span></button></li>
@@ -147,6 +146,7 @@
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">💌</span><span class="text">Share</span></button></li>
             </ul>
           </section>
+          @endauth
         </article>
       </li>
 
@@ -166,7 +166,7 @@
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime nihil qui dignissimos voluptatibus aperiam voluptatem ipsa illum facere sint, dolorem provident rem id beatae voluptate officia corrupti nam iste, odit quas dolorum quidem molestias et suscipit quod! Libero in beatae consequatur, velit enim quis molestias sit accusamus aliquam explicabo minus nobis aspernatur, asperiores iusto consectetur animi possimus molestiae eius aliquid. Fugit provident quos blanditiis nisi perferendis animi laudantium perspiciatis ipsa non cum, numquam debitis error suscipit aliquid soluta nobis! Saepe explicabo, recusandae, veniam odio pariatur, quia aspernatur nihil quibusdam assumenda vel sapiente praesentium atque nesciunt non eligendi ipsam quaerat harum?
             </p>   
           </div>
-         
+         @auth
           <section class="actions-buttons">
             <ul class="actions-buttons-list u-flex">
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">👍</span><span class="text">Up Vote</span></button></li>
@@ -175,6 +175,7 @@
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">💌</span><span class="text">Share</span></button></li>
             </ul>
           </section>
+          @endauth
         </article>
       </li>
 
@@ -194,7 +195,7 @@
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime nihil qui dignissimos voluptatibus aperiam voluptatem ipsa illum facere sint, dolorem provident rem id beatae voluptate officia corrupti nam iste, odit quas dolorum quidem molestias et suscipit quod! Libero in beatae consequatur, velit enim quis molestias sit accusamus aliquam explicabo minus nobis aspernatur, asperiores iusto consectetur animi possimus molestiae eius aliquid. Fugit provident quos blanditiis nisi perferendis animi laudantium perspiciatis ipsa non cum, numquam debitis error suscipit aliquid soluta nobis! Saepe explicabo, recusandae, veniam odio pariatur, quia aspernatur nihil quibusdam assumenda vel sapiente praesentium atque nesciunt non eligendi ipsam quaerat harum?
             </p>   
           </div>
-         
+          @auth
           <section class="actions-buttons">
             <ul class="actions-buttons-list u-flex">
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">👍</span><span class="text">Up Vote</span></button></li>
@@ -203,6 +204,7 @@
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">💌</span><span class="text">Share</span></button></li>
             </ul>
           </section>
+          @endauth
         </article>
       </li>
 
@@ -223,7 +225,7 @@
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime nihil qui dignissimos voluptatibus aperiam voluptatem ipsa illum facere sint, dolorem provident rem id beatae voluptate officia corrupti nam iste, odit quas dolorum quidem molestias et suscipit quod! Libero in beatae consequatur, velit enim quis molestias sit accusamus aliquam explicabo minus nobis aspernatur, asperiores iusto consectetur animi possimus molestiae eius aliquid. Fugit provident quos blanditiis nisi perferendis animi laudantium perspiciatis ipsa non cum, numquam debitis error suscipit aliquid soluta nobis! Saepe explicabo, recusandae, veniam odio pariatur, quia aspernatur nihil quibusdam assumenda vel sapiente praesentium atque nesciunt non eligendi ipsam quaerat harum?
             </p>   
           </div>
-         
+         @auth
           <section class="actions-buttons">
             <ul class="actions-buttons-list u-flex">
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">👍</span><span class="text">Up Vote</span></button></li>
@@ -232,6 +234,7 @@
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">💌</span><span class="text">Share</span></button></li>
             </ul>
           </section>
+          @endauth
         </article>
       </li>
 
@@ -252,6 +255,7 @@
             </p>   
           </div>
          
+          @auth
           <section class="actions-buttons">
             <ul class="actions-buttons-list u-flex">
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">👍</span><span class="text">Up Vote</span></button></li>
@@ -260,6 +264,7 @@
               <li class="actions-buttons-item"><button class="actions-buttons-button"><span class="icon">💌</span><span class="text">Share</span></button></li>
             </ul>
           </section>
+          @endauth
         </article>
       </li>
     
