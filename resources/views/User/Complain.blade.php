@@ -21,10 +21,10 @@
   @endsection
    
      @section('content')
-       <center><marquee scrollamount="35"><p class="lead" id="p">Note:Your complain are strcitly monitored please donot wrtie unecessary complain</p></center></marquee>
+       <center><marquee scrollamount="15"><p class="lead" id="p">Note:Your complain are strcitly monitored please donot wrtie unecessary complain</p></center></marquee>
          <hr>
     
-           <center><button type="button" class=" btn btn-outline-success btn-lg" data-toggle="modal" data-target="#exampleModal" id="btn1">
+           <center><button type="button" class=" btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModal" id="btn1">
             Register a Complain
            </button>
         </center>
@@ -74,7 +74,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="btn" class="btn btn-success">Submit</button>
+        <button id="btn" class="btn btn-primary">Submit</button>
       </form>
       </div>
     </div>

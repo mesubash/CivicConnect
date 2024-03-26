@@ -2,6 +2,30 @@
       @section('style')
          <link href="{{ asset('css/UserHomepage.css') }}" rel="stylesheet">
        @endsection
+       <div class="row py-3">
+            <div class="col-lg-1 col-md-1 col-1 d-none d-md-inline">
+                <img src="https://www.moha.gov.np/static/nepal-government.png"  
+                alt="Government of Nepal Logo" class="img-fluid"></a>
+            </div>
+            <div class="col-lg-1 col-md-1 text-center d-inline d-md-none ">
+                <img src="https://www.moha.gov.np/static/nepal-government.png" alt="Government of Nepal Logo" class="img-fluid"></a>
+            </div>
+
+            <div class="col-lg-7 col-md-4 col-7 text-left d-none d-md-inline text-left mt-2">
+                <h5 class="text-primary fs-6 ">Association With Government of Nepal</h5>
+            <h1 class="fs-2 mt-2 text-danger">Connecting The Development</h1>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-inline d-md-none mobile-title text-center">
+                <h5 class="text-primary fs-6">नेपाल सरकार</h5>
+                <h1 class="fs-2 mt-2 text-danger">Connecting The Development</h1>
+            </div>
+       </div>
+            <div class="alert alert-warning alert-dismissible fade show p-3" role="alert" id="msg">
+              <strong>You are interacting as Guest</strong>. Sign or register to acess  more features !!!!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+             </div>
           @section('content')
 {{-- <div class="common-structure">
       
