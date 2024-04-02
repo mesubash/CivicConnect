@@ -46,7 +46,7 @@
                         @else
                             <li class="nav-item dropdown ">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;
-                                {{ Auth::user()->name }}
+                                Profile
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -55,7 +55,7 @@
                                         {{ __('Logout') }}
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{route('user.profile')}}">View Profile</a>
+                                    <a class="dropdown-item" href="{{route('user.profile')}}">View</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

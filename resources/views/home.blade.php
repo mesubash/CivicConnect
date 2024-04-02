@@ -299,7 +299,7 @@
   $(document).ready(function() {
     setTimeout(function() {
       $('#msg').hide('fast');
-    }, 3000);
+    }, 2000);
    });
   </script>
    @endsection

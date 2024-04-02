@@ -20,12 +20,14 @@
                 <h1 class="fs-2 mt-2 text-danger">Connecting The Development</h1>
             </div>
        </div>
+           @guest
             <div class="alert alert-warning alert-dismissible fade show p-3" role="alert" id="msg">
               <strong>You are interacting as Guest</strong>. Sign or register to acess  more features !!!!
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
              </div>
+             @endguest
           @section('content')
 {{-- <div class="common-structure">
       
