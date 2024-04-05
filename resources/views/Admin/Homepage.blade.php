@@ -24,13 +24,15 @@
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-warning text-white h-100">
-              <div class="card-body py-5">Warning Card</div>
+              <div class="card-body py-5">User's Complain</div>
+              <a href="{{route('admin.usercomplain')}}" class="link link-light" style="text-decoration: none">
               <div class="card-footer d-flex">
                 View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
               </div>
+              </a>
             </div>
           </div>
           <div class="col-md-3 mb-3">

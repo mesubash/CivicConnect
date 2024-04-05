@@ -10,10 +10,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserComplainController;
 
 //user 
     Route::get('/', [GuestController::class, 'index'])->name('guest.homepage');
     Route::get('/complain', [ComplainController::class, 'index'])->name('user.complain');
+    Route::post('/complain',[ComplainController::class,'store'])->name('user.storecomplain');
     Route::get("/contactus", [ContactUsController::class, 'index'])->name('user.contactus');
     Route::get("/aboutus", [AboutUsController::class, 'index'])->name("user.aboutus");
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
@@ -21,6 +23,9 @@ use App\Http\Controllers\Admin\UserController;
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Admin
-    Route::get('/admin',[AdminHomeController::class,'index'])->name('admin.homepage');
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/',[AdminHomeController::class,'index'])->name('admin.homepage');
     Route::get('/user',[UserController::class,'index'])->name('admin.user');
- 
+    Route::get('/complain',[UserComplainController::class,'index'])->name('admin.usercomplain');
+   
+});

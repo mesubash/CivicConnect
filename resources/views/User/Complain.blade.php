@@ -41,10 +41,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form enctype="multipart/form-data" id="form">
+        <form enctype="multipart/form-data" method="POST"  id="form">
+          @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id=""> 
+                <input type="text" class="form-control" name="name" id="" value="{{Auth::user()->name}}" readonly> 
             </div>
             <div class="form-group">
                 <label for="title">Title</label>
@@ -53,19 +54,19 @@
             <div class="form-group">
                <label for="category">Category</label>
                 <select id="category" class="form-control" name="category">
-                    <option selected>Management</option>
-                     <option>Road Infrastructure</option>
-                     <option>Food and Water</option>
-                     <option>Health and Sanitaion</option>
-                     <option>Transprotation</option>
-                    <option>Social Security</option>
-                    <option>All</option>
-                     <option>Others</option>
+                    <option value="Management">Management</option>
+                    <option value="RoadInfrastructure">Road Infrastructure</option>
+                    <option value="FoodWater">Food and Water</option>
+                    <option value="HealthSanitation">Health and Sanitaion</option>
+                    <option value="Transportation">Transprotation</option>
+                    <option value="SocialSecurity">Social Security</option>
+                    <option value="All">All</option>
+                    <option value="Others">Others</option>
                 </select>
             </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Problem Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="problem"></textarea>
            </div>
         <div class="form-group">
             <label for="exampleFormControlFile1">Choose Image</label>
@@ -75,9 +76,36 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button id="btn" class="btn btn-primary">Submit</button>
-      </form>
+    </form>
       </div>
     </div>
   </div>
 </div>
+@endsection
+@section('script')
+  <script>
+$(document).ready(function(){
+    $("#btn").click(function(e){
+        e.preventDefault(); 
+        $.ajax({
+            url: "{{ route('user.storecomplain') }}",
+            type: "POST",
+            data: new FormData($('#form')[0]),
+            contentType:false,
+            processData:false,
+            success: function(response) {
+                swal({
+                  title:"Registered Sucessfully",
+                  icon:"success",
+                  button:true,
+                })
+                $("#form")[0].reset();
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }  
+        });
+    });
+});
+  </script>
 @endsection

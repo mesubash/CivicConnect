@@ -90,7 +90,7 @@
             <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
             <li>
               <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                Interface
+                Menu
               </div>
             </li>
             <li>
@@ -112,9 +112,19 @@
                   <li>
                     <a href="{{route('admin.user')}}" class="nav-link px-3">
                       <span class="me-2"
+                        ><i class="bi  bi-person-lines-fill"></i
+                      ></span>
+                      <span>UserDetail</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ps-3">
+                  <li>
+                    <a href="{{route('admin.usercomplain')}}" class="nav-link px-3">
+                      <span class="me-2"
                         ><i class="bi bi-folder"></i
                       ></span>
-                      <span>UserDetails</span>
+                      <span>UserComplain</span>
                     </a>
                   </li>
                 </ul>
