@@ -29,7 +29,7 @@ class UserController extends Controller
           })
             ->addColumn('action',function()
           {
-            $actionBtn='<a href="#" class="btn btn-danger">Edit</a>';
+            $actionBtn='<a href="" class="btn btn-success btn-sm"><i class="bi bi-eye-fill"></i></a>';
             return $actionBtn;
           })
             ->rawColumns(['action'])

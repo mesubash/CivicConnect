@@ -5,9 +5,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Complain;
-
+use App\Repositories\ComplainRepository;
 class UserComplainController extends Controller
-{
+{   
+    protected $complainRepository;
+    public function __construct(ComplainRepository $complainRepository)
+    {
+        $this->complainRepository=$complainRepository;
+    }
     public function index(Request $request)
     {
         if($request->ajax())
@@ -42,15 +47,21 @@ class UserComplainController extends Controller
             {
                 return $data->image;
             })
-            ->addColumn('action',function($data)
-            {
-                $action='<a href="'.$data->user_id.'" class="btn btn-success btn-sm"><i class="bi bi-eye"></i></a>';
-                return $action;
-            })
-            ->rawColumns(['action'])
+            // ->addColumn('action',function($data)
+            // {
+            //     $action='<a href="admin/complao'.$data->user_id.'" class="btn btn-success btn-sm"><i class="bi bi-eye"></i></a>';
+            //     return $action;
+            // })
+            // ->rawColumns(['action'])
             ->make(true);
         }
-        return view("Admin.UserComplain");
+        return view("Complain.index");
+    }
+
+    public function view($complain_id)
+    { 
+        $data=$this->complainRepository->findByComplainId($complain_id);
+        return view('Complain.view')->with(compact('data'));
     }
   
 }

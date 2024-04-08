@@ -5,7 +5,7 @@
                 <div class="card-header">  --}}
                         <center><h3 class="text text-primary">User's Complain</h3></center>
                 {{-- </div> --}}
-                <table class="table table-bordered ms-1" id="table">
+                <table class="table table-bordered" id="table">
                     <thead>
                         <tr>
                             <th scope="col" style="width: 12%" >Complain_id</th>
@@ -26,9 +26,10 @@
     @section('script')
         <script>
             $(document).ready(function()
-            {
+            {   let viewUrl='{{route('admin.complain.view',123)}}'
+                viewUrl=viewUrl.replace(123,'')
                 $("#table").DataTable(
-                    {
+                    {   
                         processing:true,
                         serverSide:true,
                         ajax:"{{route('admin.usercomplain')}}",
@@ -57,7 +58,7 @@
                                 {
                                 if(data!=null)
                                     {
-                                    return'<img src="{{ asset("Image") }}/' + data + '"class="ms-2" height=75px" width="75px">';
+                                    return'<img src="{{ asset("Image") }}/' + data +'"class="ms-2" height=75px" width="75px">';
                                     }
                                 else
                                     {
@@ -66,7 +67,11 @@
                                 }
                             },
                             {
-                            data:'action'
+                                data:function(row)
+                                    {
+                                        return '<a class="btn btn-success btn-sm" href="'+viewUrl+row.complain_id+'"><i class="bi bi-eye"></i></a>';
+                                    },
+                                name:'complain_id'    
                             }
                             ],
                         searchable:true,

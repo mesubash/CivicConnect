@@ -27,5 +27,6 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/',[AdminHomeController::class,'index'])->name('admin.homepage');
     Route::get('/user',[UserController::class,'index'])->name('admin.user');
     Route::get('/complain',[UserComplainController::class,'index'])->name('admin.usercomplain');
+    Route::get('/complain/view/{id}',[UserComplainController::class,'view'])->name('admin.complain.view');
    
 });
