@@ -55,7 +55,7 @@
                                         {{ __('Logout') }}
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{route('user.profile')}}">View</a>
+                                    <a class="dropdown-item" href="{{url('profile/'. Auth::user()->id)}}">View</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

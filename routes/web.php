@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\UserComplainController;
     Route::post('/complain',[ComplainController::class,'store'])->name('user.storecomplain');
     Route::get("/contactus", [ContactUsController::class, 'index'])->name('user.contactus');
     Route::get("/aboutus", [AboutUsController::class, 'index'])->name("user.aboutus");
-    Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
+    Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('user.profile');
     Auth::routes();
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
