@@ -21,14 +21,13 @@ abstract class EloquentRepository implements RepositoryInterface
   {
    $this->model->create($arrtibutes);
   }
-
-  public function findOrfail($id)
+  public function find($id)
   {
-   $result=$this->model->findOrfail($id);
-   if($result)
-   {
-      $this->model=$result;
-   }
-   return $result;
+      $result=$this->model->find($id);
+      if($result)
+      {
+         $this->model=$result;
+      }
+      return $result;
   }
 }

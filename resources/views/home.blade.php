@@ -117,16 +117,15 @@
   {{-- </aside> --}}
   @foreach($data as $item)
     <main class="main-feed">
-      <ul class="main-feed-list">
+      {{-- <ul class="main-feed-list"> --}}
         <li class="main-feed-item">
           <article class="common-post">
             <header class="common-post-header u-flex">
-              <img src="https://assets.codepen.io/65740/internal/avatars/users/default.png" class="user-image" width="45" height="45" alt="">
-              <br>
+              <img src="{{ asset('profile_photo/no_profile.jpeg')}}" class="user-image" width="45" height="45" alt="">
               <div class="common-post-info">
                 <div class="user-and-group u-flex">
                   @if($item->name)    
-                    <p style="font-size:20px; color:red;">{{$item->name}}</p>
+                    <p style="font-size:20px; color:red;" class="text-capitalize mt-2">{{$item->name}}</p>
                   @endif
                 </div>
                 <div class="time-and-privacy"><time datetime="">{{$item->created_at}}</time></div>
@@ -134,12 +133,12 @@
             </header>
             <div class="common-post-content common-content">
               @if($item->title)
-                <p style="font-size:20px;">
+                <p style="font-size:20px;" class="text-capitalize">
                   {{$item->title}}
                 </p>
               @endif
               @if($item->problem)     
-              <p>
+              <p class="text-capitalize">
                {{$item->problem}}
               </p>
               @endif
@@ -154,7 +153,7 @@
             </section>
           </article>
         </li>
-      </ul>
+      {{-- </ul> --}}
     </main>
   @endforeach     
 @endsection  

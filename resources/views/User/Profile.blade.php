@@ -12,9 +12,13 @@
 							<div class="account-settings">
 								<div class="user-profile">
 									<div class="user-avatar">
-										<img  src="{{asset('image/GovImage.jpeg')}}"  alt="Maxwell Admin" id="myImg" class="rounded-circle border border-primary">
-									</div>
-								<h5 class="user-name text-info">{{Auth::user()->name}}</h5>
+										@if(Auth::user()->p_image)
+											<img src="{{ asset('profile_photo/' . Auth::user()->p_image) }}"  alt="Maxwell Admin" id="myImg" class="rounded-circle">
+										@else
+											<img src="{{asset('profile_photo/no_profile.jpeg')}}"  alt="Maxwell Admin" id="myImg" class="rounded-circle">
+										@endif	
+									</div>	
+								<h5 class="user-name text-success text-capitalize h3">{{Auth::user()->name}}</h5>
 								<h6 class="user-email">{{Auth::user()->email}}</h6>
 							</div>
 						<div class="about">
@@ -22,8 +26,8 @@
 						</div>
 						@foreach($data as $item)
 	            			<ul class="list-group">
-								@if($item->problem)
-	                				<li class="list-group-item list-group-item-danger list-group-item-action" data-toggle="modal" data-target="#exampleModal">{{$item->problem}}</li>
+								@if($item->title)
+	                				<li class="list-group-item list-group-item-danger list-group-item-action text-capitalize" data-toggle="modal" data-target="#exampleModal">{{$item->title}}</li>
 								@endif
 	            			</ul>
 						@endforeach
@@ -39,10 +43,11 @@
 							<h6 class="mb-2 text-primary">Personal Details</h6>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<form enctype="multipart/form-data">
+							<form enctype="multipart/form-data" id="form" method="POST">
+								@csrf
 							<div class="form-group">
 								<label for="fullName">Firstname</label>
-								<input type="text" class="form-control" id="fullName" placeholder="First Name" name="Firstname">
+								<input type="text" class="form-control text-danger text-capitalize" id="fullName" placeholder="First Name" name="Firstname" value="{{Auth::user()->name}}">
 							</div>
 						</div>
 	            		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -54,13 +59,19 @@
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="eMail">Email</label>
-								<input type="email" class="form-control" id="eMail" placeholder=" Email" name="Email" value="{{Auth::user()->email}}">
+								<input type="email" class="form-control text-danger" id="eMail" placeholder=" Email" name="Email" value="{{Auth::user()->email}}">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="phone">Phone</label>
-								<input type="text" class="form-control" id="phone" placeholder="Phone number" name="Phonenumber"> 
+								<input type="text" class="form-control text-danger" id="phone" placeholder="Phone number" name="phone_number" value="{{ isset(Auth::user()->phone_number) ? Auth::user()->phone_number : '' }}"> 
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<div class="form-group">
+								<label for="photo">Profile Picture</label>
+								<input type="file" class="form-control" id="photo" placeholder="Upload Your Proflie Photo" name="p_photo">
 							</div>
 						</div>
 					</div>
@@ -91,10 +102,11 @@
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="text-right">
 								<button type="reset" class="btn btn-secondary">Cancel</button>
-								<button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+								<button type="button" id="update" name="submit" class="btn btn-primary">Update</button>
 							</div>
 						</div>
 					</div>
+				</form>
 				</div>
 			</div>
 		</div>
@@ -182,4 +194,38 @@
 	    	    $('#photoModal2').modal('show');    
 	    	}
 		</script>
+		<script>
+			$(document).ready(function()
+			{
+				let user_id="{{Auth::user()->id}}"
+				let updateUrl='{{route('user.profile.update',123)}}'
+				updateUrl=updateUrl.replace(123,user_id)
+				$("#update").click(function(e)
+				{	
+					e.preventDefault()
+					$.ajax(
+					{	
+						url:updateUrl,
+						type:"POST",
+						data:new FormData($('#form')[0]),
+						contentType:false,
+						processData:false,
+						success:function()
+						{
+							swal(
+								{
+									title:"Succesfully Updated",
+									icon:"success",
+									button:true
+								})
+						},
+						error:function(xhr)
+						{
+                			console.log(xhr.responseText);
+            			}  
+					})
+
+				})
+			})
+		</script>	
 	@endsection

@@ -8,5 +8,5 @@ interface RepositoryInterface{
     
     public function setModel();
 
-    public function findOrfail($id);
+    public function find($id);
 }

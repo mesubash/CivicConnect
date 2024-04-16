@@ -17,6 +17,8 @@
     <script>
       $(document).ready(function()
       {
+        viewUrl='{{route('admin.user.view',123)}}'
+        viewUrl=viewUrl.replace(123,'')
         $("#table").DataTable(
         {
           processing:true,
@@ -30,13 +32,16 @@
             data:'id'
           },
           {
-           data:'name'
+            data:'name'
           },
           {
-           data:'email',
+            data:'email',
           },
           {
-            data:'action',
+            data:function(row)
+            {
+              return '<a class="btn btn-success btn-sm" href="'+viewUrl+row.id+'"><i class="bi bi-eye"></i></a>';
+            },
             searchable:true,
             orderable:true
           }]

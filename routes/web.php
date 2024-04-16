@@ -19,14 +19,16 @@ use App\Http\Controllers\Admin\UserComplainController;
     Route::get("/contactus", [ContactUsController::class, 'index'])->name('user.contactus');
     Route::get("/aboutus", [AboutUsController::class, 'index'])->name("user.aboutus");
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('user.profile');
+    Route::post('/profile/{id}',[ProfileController::class,'update'])->name('user.profile.update');
     Auth::routes();
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Admin
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin'],function()
+    {
     Route::get('/',[AdminHomeController::class,'index'])->name('admin.homepage');
     Route::get('/user',[UserController::class,'index'])->name('admin.user');
+    Route::get('/user/{id}',[UserController::class,'view'])->name('admin.user.view');
     Route::get('/complain',[UserComplainController::class,'index'])->name('admin.usercomplain');
     Route::get('/complain/view/{id}',[UserComplainController::class,'view'])->name('admin.complain.view');
-   
-});
+    });

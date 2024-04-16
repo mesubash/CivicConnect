@@ -45,7 +45,7 @@
           @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="" value="{{Auth::user()->name}}" readonly> 
+                <input type="text" class="form-control text-capitalize" name="name" id="" value="{{Auth::user()->name}}" readonly> 
             </div>
             <div class="form-group">
                 <label for="title">Title</label>
