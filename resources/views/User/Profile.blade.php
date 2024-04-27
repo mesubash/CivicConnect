@@ -59,7 +59,7 @@
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="eMail">Email</label>
-								<input type="email" class="form-control text-danger" id="eMail" placeholder=" Email" name="Email" value="{{Auth::user()->email}}">
+								<input type="email" class="form-control text-danger" id="eMail" placeholder=" Email" name="email" value="{{Auth::user()->email}}">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
