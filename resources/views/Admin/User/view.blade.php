@@ -16,7 +16,7 @@
 								        <div class="mt-3">
 									        <h4 class="text-danger text-capitalize">{{$user->name}}</h4>
 									        <p class="text-secondary mb-1">Citizen</p>
-									        <p class="text-muted text-capitalize font-size-sm">{{isset($user->address)? $user->address : 'Not Addressed'}}</p>
+									        <p class="text-muted text-capitalize font-size-sm">{{isset($user->address)? $user->address : 'Not Addressed'}} {{isset($user->ward_no)? $user->ward_no : ''}} </p>
 									        <button class="btn btn-outline-primary">Message</button>
 								        </div>
 							        </div>
@@ -129,7 +129,7 @@
 						    </div>
 					    </div>
 					    <div class="row">
-						    <div class="col-sm-12">
+						    <div class="col-sm-12 col-md-12 col-lg-4">
 							    <div class="card">
 								    <div class="card-body">
 									    <h5 class="d-flex align-items-center mb-3 text-danger">Registered Complain</h5>
