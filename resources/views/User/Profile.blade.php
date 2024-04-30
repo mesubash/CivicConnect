@@ -82,13 +82,13 @@
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="Street">Address</label>
-								<input type="text" class="form-control" id="Street" placeholder="Address" name="Address">
+								<input type="text" class="form-control text-capitalize text-danger" id="Street" placeholder="Address" name="address" value="{{isset(Auth::user()->address)?Auth::user()->address:''}}">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="sTate">Ward</label>
-								<input type="text" class="form-control" id="sTate" placeholder="State" name="Ward">
+								<input type="text" class="form-control text-danger" id="sTate" placeholder="State" name="ward" value="{{isset(Auth::user()->ward_no) ? Auth::user()->ward_no : ''}}">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

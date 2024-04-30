@@ -25,6 +25,8 @@ class ProfileController extends Controller
         $user = User::find($id);
         $user->phone_number = $request->phone_number;
         $user->email=$request->email;
+        $user->address=$request->address;
+        $user->ward_no=$request->ward;
         if ($request->hasFile('p_photo')) 
         {
             if($user->p_image)

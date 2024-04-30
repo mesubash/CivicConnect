@@ -16,7 +16,7 @@
 								        <div class="mt-3">
 									        <h4 class="text-danger text-capitalize">{{$user->name}}</h4>
 									        <p class="text-secondary mb-1">Citizen</p>
-									        <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+									        <p class="text-muted text-capitalize font-size-sm">{{isset($user->address)? $user->address : 'Not Addressed'}}</p>
 									        <button class="btn btn-outline-primary">Message</button>
 								        </div>
 							        </div>
@@ -114,8 +114,17 @@
 									        <h6 class="mb-0">Address</h6>
 								        </div>
 								        <div class="col-sm-9 text-secondary">
-									        <input type="text" class="form-control" value="Bay Area, San Francisco, CA">
-								    </div>
+									        <input type="text" class="form-control text-capitalize" value="{{isset($user->address)?$user->address:'Not Addressed'}}" readonly>
+								    	</div>
+									</div>
+									<div class="row mb-3">
+								        <div class="col-sm-3">
+									        <h6 class="mb-0">Ward No:</h6>
+								        </div>
+								        <div class="col-sm-9 text-secondary">
+									        <input type="text" class="form-control text-capitalize" value="{{isset($user->ward_no)?$user->ward_no:'Not Addressed'}}" readonly>
+								    	</div>
+									</div>
 							    </div>
 						    </div>
 					    </div>
