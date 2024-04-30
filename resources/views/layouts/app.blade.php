@@ -10,21 +10,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link link-light" href="{{route('home')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Home<spanc class="sr-only">(current)</spanc></a>                                                                   
+                    <a class="nav-link {{ (request()->path() == 'home' || request()->path()== '/') ? 'link-dark' : 'link-light' }}" href="{{route('home')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Home<span class="sr-only">(current)</span></a>                                                                   
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="{{route('user.aboutus')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;AboutUs
+                   <a class="nav-link {{ (request()->path() == 'aboutus') ? 'link-dark' : 'link-light' }}" href="{{ route('user.aboutus') }}" style="font-family: monospace; font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;AboutUs</a>
                     </a>
                 </li>
                 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="{{route('user.contactus')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ContactUs</a>
+                    <a class="nav-link {{(request()->path()=='contactus') ? 'link-dark' : 'link-light'}}" href="{{route('user.contactus')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ContactUs</a>
                 </li>
                 @endauth
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="{{route('user.complain')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Complain</a>
+                    <a class="nav-link {{(request()->path() == 'complain') ? 'link-dark':'link-light'}}" href="{{route('user.complain')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;Complain</a>
                 </li>
                 @endauth
                 <li class="nav-item">
@@ -34,13 +34,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link link-light" href="{{ route('login') }}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('Login') }}</a>
+                                <a class="nav-link {{(request()->path()=='login') ? 'link-dark':'link-light'}}" href="{{ route('login') }}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link link-light" href="{{ route('register') }}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('Register') }} </a>
+                            <a class="nav-link {{(request()->path() == 'register') ? 'link-dark':'link-light'}}" href="{{ route('register') }}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('Register') }} </a>
                         </li>
                          @endif
                         @else
