@@ -16,7 +16,7 @@
             <h1 class="fs-2 mt-2 text-danger">Connecting The Development</h1>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 d-inline d-md-none mobile-title text-center">
-                <h5 class="text-primary fs-6">नेपाल सरकार</h5>
+                <h5 class="text-primary fs-6 mt-2">Assocation With Government of Nepal</h5>
                 <h1 class="fs-2 mt-2 text-danger">Connecting The Development</h1>
             </div>
        </div>
