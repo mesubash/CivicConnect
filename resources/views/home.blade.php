@@ -14,7 +14,7 @@
         <h1 class="fs-2 mt-2 text-danger">Connecting The Development</h1>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 d-inline d-md-none mobile-title text-center">
-        <h5 class="text-primary fs-6">नेपाल सरकार</h5>
+        <h5 class="text-primary fs-6 mt-2">Association With Government of Nepal</h5>
         <h1 class="fs-2 mt-2 text-danger">Connecting The Development</h1>
       </div>
       <div class="col-lg-3 col-md-4  col-sm-5 d-none d-md-block d-sm-block">
@@ -116,14 +116,17 @@
     </section> -->
   {{-- </aside> --}}
     <section>
-     @foreach($data as $item)
+     @foreach($data as $item) 
       <center>
         <div class="card" style="max-width: 42rem;postion:relative;top:2em;">
           <div class="card-body">
             <div class="d-flex mb-3">
               <a href="">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/18.webp" class="border rounded-circle me-2"
-                  alt="Avatar" style="height: 50px; width:50px;" />
+                @if($item->user->p_image)
+                  <img src="{{asset('profile_photo/' . $item->user->p_image)}}" class="border rounded-circle me-2" alt="Avatar" style="height: 50px; width:50px;"/>
+                @else
+                  <img src="{{asset('profile_photo/no_profile.jpeg')}}" class="border rounded-circle me-2" alt="Avatar" style="height: 50px; width:50px;"/>
+                @endif
               </a>
             <div>
             <p class="text-capitalize text-danger" style="position:relative;left:-40px">{{$item->name}}</p>

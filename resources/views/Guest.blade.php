@@ -37,8 +37,11 @@
           <div class="card-body">
             <div class="d-flex mb-3">
               <a href="">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/18.webp" class="border rounded-circle me-2"
-                  alt="Avatar" style="height: 50px; width:50px;" />
+                @if($item->user->p_image)
+                  <img src="{{asset('profile_photo/' . $item->user->p_image)}}" class="border rounded-circle me-2" alt="Avatar" style="height: 50px; width:50px;"/>
+                @else
+                  <img src="{{asset('profile_photo/no_profile.jpeg')}}" class="border rounded-circle me-2" alt="Avatar" style="height: 50px; width:50px;"/>
+                @endif
               </a>
             <div>
             <p class="text-capitalize text-danger" style="position:relative;left:-40px">{{$item->name}}</p>

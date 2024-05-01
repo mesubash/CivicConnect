@@ -10,7 +10,7 @@ class GuestController extends Controller
 {
     public function index()
     {
-        $data=Complain::all();
+        $data=Complain::with('user')->get();
         return view('Guest')->with(compact('data'));
     }
 }
