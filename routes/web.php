@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\UserComplainController;
     Route::get("/aboutus", [AboutUsController::class, 'index'])->name("user.aboutus");
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('user.profile');
     Route::post('/profile/{id}',[ProfileController::class,'update'])->name('user.profile.update');
+    Route::get('profile/view/{id}',[ProfileController::class,'single_profile'])->name('user.profile.individual');
     Auth::routes();
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 

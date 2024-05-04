@@ -44,4 +44,9 @@ class ProfileController extends Controller
         $user->save();
         return response()->json();
     }
+    public function single_profile($user_id)
+    {
+        $complains=$this->complainRepository->findByUserId($user_id);
+        return view('Admin.User.single_profile')->with(compact('complains'));
+    }
 }

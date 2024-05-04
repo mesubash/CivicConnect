@@ -129,7 +129,7 @@
                 @endif
               </a>
             <div>
-            <p class="text-capitalize text-danger" style="position:relative;left:-40px">{{$item->name}}</p>
+           <a href="{{route('user.profile.individual',$item->user_id)}}" style="text-decoration: none"> <p class="text-capitalize text-danger" style="position:relative;left:-40px"data-user_id="{{ $item->user_id }}">{{$item->name}}</p></a>
             <p class="text-muted d-block text-decoration-underline" style="margin-top: -10px">
               <small>{{$item->created_at}}</small>
             </p>
