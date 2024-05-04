@@ -1,14 +1,13 @@
 @extends('layouts.app')
     @section('content')
-      @foreach( $complains as $complain)
         <div class="container py-5 h-100" style="margin-top:-40px">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-9 col-xl-7">
               <div class="card">
                 <div class="rounded-top text-white d-flex flex-row" style="background-color:black; height:200px;">
                   <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                    @if($complain->user->p_image)
-                    <img src="{{asset('profile_photo/'. $complain->user->p_image)}}"
+                    @if($user->p_image)
+                    <img src="{{asset('profile_photo/'. $user->p_image)}}"
                       alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                       style="width: 150px; z-index: 1">
                       @else
@@ -22,8 +21,8 @@
                     </button>
                   </div>
                   <div class="ms-3" style="margin-top: 130px;">
-                    <h5 class="text-capitalize">{{$complain->user->name}}</h5>
-                    <p>{{$complain->user->email}}</p>
+                    <h5 class="text-capitalize">{{$user->name}}</h5>
+                    <p>{{$user->email}}</p>
                   </div>
                 </div>
                 <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -47,9 +46,12 @@
                         <p class="lead fw-normal mb-1 text-danger">Compalin Registered</p>
                         <div class="p-2 text-center" style="background-color: #f8f9fa;">
                             <ul class="list-group">
+                                @foreach( $complains as $complain)
 							    @if($complain->title)
 	                			    <li class="list-group-item list-group-item-danger list-group-item-action text-capitalize" data-toggle="modal" data-target="#exampleModal">{{$complain->title}}</li>
+                                    <hr>
 							    @endif
+                                @endforeach
 	            		    </ul>
                         </div>
                     </div>
@@ -59,10 +61,13 @@
                   </div>
                   <div class="row g-2">
                     <div class="col mb-2">
+                        @foreach( $complains as $complain)
                         @if($complain->image)
                       <img src="{{asset('image/'. $complain->image)}}"
-                        alt="image 1" class="w-50 rounded-3">
+                        alt="image 1" class="w-100 rounded-3">
+                        <hr>
                         @endif
+                        @endforeach
                     </div>
                   </div>
                 </div>
@@ -70,5 +75,4 @@
             </div>
           </div>
         </div>
-        @endforeach
     @endsection

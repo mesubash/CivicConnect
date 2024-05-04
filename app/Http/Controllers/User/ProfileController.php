@@ -46,7 +46,8 @@ class ProfileController extends Controller
     }
     public function single_profile($user_id)
     {
+        $user=User::find($user_id);
         $complains=$this->complainRepository->findByUserId($user_id);
-        return view('Admin.User.single_profile')->with(compact('complains'));
+        return view('Admin.User.single_profile')->with(compact('complains','user'));
     }
 }
