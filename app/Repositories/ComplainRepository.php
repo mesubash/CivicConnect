@@ -17,6 +17,6 @@ class ComplainRepository extends EloquentRepository implements ComplainRepositor
     }
     public function findByUserId($user_id)
     {
-        return Complain::where('user_id',$user_id)->get();
+        return Complain::where('user_id',$user_id)->orderBy('created_at','desc')->get();
     }
 }

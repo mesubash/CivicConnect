@@ -46,6 +46,11 @@ class ProfileController extends Controller
     }
     public function single_profile($user_id)
     {
+        if(request()->ajax())
+        {
+            $follower=Auth::user()->id;
+            return response()->json(['message'=>$follower]);
+        }
         $user=User::find($user_id);
         $complains=$this->complainRepository->findByUserId($user_id);
         return view('Admin.User.single_profile')->with(compact('complains','user'));
