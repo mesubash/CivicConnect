@@ -25,25 +25,43 @@
                 <div class="rounded-top text-white d-flex flex-row" style="background-color:black; height:200px;">
                   <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                     @if($user->p_image)
-                    <img src="{{asset('profile_photo/'. $user->p_image)}}"
-                      alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                      style="width: 150px; z-index: 1">
-                      @else
+                      <img src="{{asset('profile_photo/'. $user->p_image)}}"
+                        alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                        style="width: 150px; z-index: 1">
+                    @else
                       <img src="{{asset('profile_photo/no_profile.jpeg')}}"
                       alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                       style="width: 150px; z-index: 1">
-                      @endif
-                      @if(Auth::user()->id == $user->id)
+                    @endif
+                    @if(Auth::user()->id == $user->id)
                         <a class="btn btn-outline-success" data-mdb-ripple-color="dark"
-                        style="z-index: 1;" href="{{route('user.profile',Auth::user()->id)}}">
+                        style="z-index: 1;" href="{{ route('user.profile', Auth::user()->id) }}">
                         Edit Profile
                         </a>
+                    @else
+                      @php
+                        $is_following=(in_array($user->id ,$following_ids))
+                      @endphp
+                      @if($is_following)
+                         <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark"
+                          style="z-index:1;" id="unfollow" data-user_id="{{ $user->id }}">
+                          Unfollow
+                        </button>
+                         <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark"
+                          style="z-index: 1;display:none;" id="follow" data-user_id="{{ $user->id }}">
+                          Follow
+                        </button>
                       @else
                         <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark"
-                        style="z-index: 1;" id="follow" data-user_id={{$user->id}}>
-                        follow
+                        style="z-index: 1;" id="follow" data-user_id="{{ $user->id }}">
+                        Follow
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark"
+                          style="z-index:1;display:none;" id="unfollow" data-user_id="{{ $user->id }}">
+                          Unfollow
                         </button>
                       @endif  
+                    @endif
                   </div>
                   <div class="ms-3" style="margin-top: 130px;">
                     <h5 class="text-capitalize">{{$user->name}}</h5>
@@ -61,7 +79,7 @@
                       <p class="small text-muted mb-0">Followers</p>
                     </div>
                     <div>
-                      <p class="mb-1 h5">478</p>
+                      <p class="mb-1 h5">{{ $user->followings()->count() ?? 0 }}</p>
                       <p class="small text-muted mb-0">Following</p>
                     </div>
                   </div>
@@ -172,12 +190,14 @@
           $('#follow').click(function()
           { 
             var user_id=$(this).data('user_id')
+            var action="follow"
             update_url='{{route('user.profile.individual',123)}}'
             update_url=update_url.replace(123,user_id)
             $.ajax(
               {
                 url:update_url,
                 type:"GET",
+                data:{action:action},
                 success:function(res)
                 {
                   toastr.options = 
@@ -193,13 +213,51 @@
                     "hideEasing": "linear",
                     "positionClass": "custom-toast-container"
                   };
-                  toastr.success('Followed Successfully');
-                },
+                    toastr.success(res.message)
+                    $('#follow').hide()
+                    $('#unfollow').show()
+                  },
                 error:function(xhr,error)
                 {
                   console.error(error)
                 }
               })
+          })  
+          $('#unfollow').click(function()
+          {
+            var user_id=$(this).data('user_id')
+            var action="unfollow"
+            update_url='{{route('user.profile.individual',123)}}'
+            update_url=update_url.replace(123,user_id)
+            $.ajax(
+            {
+              url:update_url,
+              type:"GET",
+              data:{action:action},
+              success:function(res)
+              {
+                toastr.options = 
+                  {
+                    "positionClass": "toast-top-right",
+                    "toastClass": "custom-toast",
+                    "timeOut": 3000,
+                    "closeButton": true,
+                    "progressBar": true,
+                    "showDuration": "300",
+                    "hideDuration": "2000",
+                    // "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "positionClass": "custom-toast-container"
+                  };
+                $('#follow').show()
+                $('#unfollow').hide() 
+                toastr.error('unfollowed successfully') 
+              },
+              error:function(xhr,error)
+                {
+                  console.error(error)
+                }
+            })
           })
         })
       </script>

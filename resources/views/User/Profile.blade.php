@@ -93,8 +93,27 @@
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
-								<label for="zIp">Zip Code</label>
-								<input type="text" class="form-control" id="zIp" placeholder="Zip Code">
+								<label for="province">Province</label>
+								<select class="form-select" aria-label="Default select example" id="provinces">
+  									<option value="">Select Province</option>
+									@foreach($provinces as $province)
+  									<option value="{{$province->id}}">{{$province->name}}</option>
+									@endforeach
+								</select>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<div class="form-group">
+								<label for="district">District</label>
+								<select class="form-select" aria-label="Default select example" id="districts">
+								</select>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<div class="form-group">
+								<label for="loacallevel">Local Level</label>
+								<select class="form-select" aria-label="Default select example" id="local_level">
+								</select>
 							</div>
 						</div>
 					</div>
@@ -226,6 +245,49 @@
 					})
 
 				})
+				$("#provinces").change(function()
+				{
+					var province_id=this.value
+					district_url='{{route('user.profile',123)}}'
+					district_url=district_url.replace(123,province_id)
+					$.ajax(
+					{
+						url:district_url,
+						type:"GET",
+						success:function(res)
+						{
+							let option = '<option value="" selected>Choose District</option>'
+							$('#districts').empty();
+							res.districts.forEach(item => {
+								 option += '<option value="' + item.id + '">' + item.name +
+                            '</option>'
+							});
+							$('#districts').append(option)
+						}
+					})
+				})
+				$("#districts").change(function()
+				{
+					var district_id=this.value
+					local_url='{{route('user.profile',123)}}'
+					local_url=local_url.replace(123,district_id)
+					$.ajax(
+					{
+						url:local_url,
+						type:"GET",
+						success:function(res)
+						{
+							let option = '<option value="" selected>Choose Municipality</option>'
+							$('#local_level').empty();
+							res.local_levels.forEach(item => {
+								 option += '<option value="' + item.id + '">' + item.name +
+                            '</option>'
+							});
+							$('#local_level').append(option)
+						}
+					})
+				})
+				
 			})
 		</script>	
 	@endsection

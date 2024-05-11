@@ -49,4 +49,8 @@ class User extends Authenticatable
     {   
         return $this->hasMany(Complain::class);
     }
+    public function followings()
+    {
+        return $this->belongsToMany(User::class,'profiles','user_id','following_id');
+    }
 }
