@@ -71,7 +71,7 @@
                 <div class="p-4 text-black" style="background-color: #f8f9fa;">
                   <div class="d-flex justify-content-end text-center py-1">
                     <div>
-                      <p class="mb-1 h5">253</p>
+                      <p class="mb-1 h5">{{$user->complains()->count() ?? 0 }}</p>
                       <p class="small text-muted mb-0">Complains</p>
                     </div>
                     <div class="px-4">
