@@ -54,14 +54,31 @@
             <div class="form-group">
                <label for="category">Category</label>
                 <select id="category" class="form-control" name="category">
-                    <option value="Management">Management</option>
-                    <option value="RoadInfrastructure">Road Infrastructure</option>
-                    <option value="FoodWater">Food and Water</option>
-                    <option value="HealthSanitation">Health and Sanitaion</option>
-                    <option value="Transportation">Transprotation</option>
-                    <option value="SocialSecurity">Social Security</option>
-                    <option value="All">All</option>
-                    <option value="Others">Others</option>
+                  <option selected >-------------------------- कोटि छनोट गर्नुहोस् -----------------------------</option>
+                  <option value="लागु पदार्थको दुरुपयोग">लागु पदार्थको दुरुपयोग (Drug Abuse)</option>
+                  <option value="प्राकृतिक श्रोत दोहन">प्राकृतिक श्रोत दोहन (Natural Resource Misuse)</option>
+                  <option value="भन्सार/राजस्व छली">भन्सार/राजस्व छली (Complaint of Customs Revenue Fraud)</option>
+                  <option value="खानेपानी सम्बन्धित गुनासो">खानेपानी सम्बन्धित गुनासो (Drinking Water Related Complains)</option>
+                  <option value="प्राकृतिक श्रोतको अतिक्रमण">प्राकृतिक श्रोतको अतिक्रमण (Natural Resources Encroachment)</option>
+                  <option value="फुटपाथ/ जेब्राक्रस नभएको">फुटपाथ/ जेब्राक्रस नभएको (No Footpath/Zebra cross)</option>
+                  <option value="लागु औषध ओसारपोसार">लागु औषध ओसारपोसार (Drugs Trafficking)</option>
+                  <option value="स्वास्थ्य चौकी/अस्पतालसंग सम्बन्धी">स्वास्थ्य चौकी/अस्पतालसंग सम्बन्धी (Related to health post / hospital)</option>
+                  <option value="महामारी फैलिएको">महामारी फैलिएको (Spread of Epidemics)</option>
+                  <option value="प्रयोगशालामा आवश्यक उपकरणको अभाव">प्रयोगशालामा आवश्यक उपकरणको अभाव (Lack of essential equipment in the laboratory)</option>
+                  <option value="कार्यालय परिसरमा सफाईको कमी">कार्यालय परिसरमा सफाईको कमी (Lack of cleanliness in office premises)</option>
+                  <option value="कर्मचारीहरूले कार्यालय पोसाक नलगाएको">कर्मचारीहरूले कार्यालय पोसाक नलगाएको (Not putting office uniform by staffs)</option>
+                  <option value="सरकारी सवारी साधनको दुरुपयोग">सरकारी सवारी साधनको दुरुपयोग (Misuse of government Vehicles)</option>
+                  <option value="सार्वजनिक निर्माणमा सम्बन्धी">सार्वजनिक निर्माणमा सम्बन्धी (Delay in public construction)</option>
+                  <option value="निर्माणकार्यमा अनियमितता">निर्माणकार्यमा अनियमितता (Irregularity in construction)</option>
+                  <option value="घुस/रिसवत लेनदेन">घुस/रिसवत लेनदेन (Bribery)</option>
+                  <option value="अस्पताल/स्वास्थ्य चौकीमा अनियमितता">अस्पताल/स्वास्थ्य चौकीमा अनियमितता (Irregularity in hospital/Health post)</option>
+                  <option value="खरिदमा अनियमितता">खरिदमा अनियमितता (Irregularity in purchases)</option>
+                  <option value="वेबसाइटमा समस्या">वेबसाइटमा समस्या (Problem in Website)</option>
+                  <option value="कर्मचारी अभाव">कर्मचारी अभाव (Lack of Staff)</option>
+                  <option value="पर्किङ्ग सम्बन्धि गुनासो">पर्किङ्ग सम्बन्धि गुनासो (Parking related complaint)</option>
+                  <option value="कार्यालय अभिलेख/रेकर्ड सम्बन्धि गुनासो">कार्यालय अभिलेख/रेकर्ड सम्बन्धि गुनासो (Office record keeping related complains)</option>
+                  <option value="कर्मचारी माथिको भेदभाव">कर्मचारी माथिको भेदभाव (Employee discrimination)</option>
+                  <option value="नागरिक वडापत्र सम्बन्धि गुनासो">नागरिक वडापत्र सम्बन्धि गुनास
                 </select>
             </div>
         <div class="form-group">
