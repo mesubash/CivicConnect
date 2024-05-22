@@ -48,7 +48,7 @@
         <h2>Subash Ray</h2>
         <p class="title">Frontend Developer</p>
         <p>"The future belongs to those who believe in the beauty of their dreams"</p>
-        <p class="text-danger">subashray15@gmail.co</p>
+        <p class="text-danger">subashray15@gmail.com</p>
         <p> <a href="mailto:subashray15@gmail.com"><button class="button bg-primary">Contact</button></a></p>
       </div>
     </div>
