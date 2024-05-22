@@ -54,6 +54,7 @@
         <div>
           <p class="lead">
             {{$item->problem}}
+            {{$item->category}}
           </p>
         </div>
         <!-- Media -->
