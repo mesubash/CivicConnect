@@ -19,7 +19,7 @@
                 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link {{(request()->path()=='contactus') ? 'link-dark' : 'link-light'}}" href="{{route('user.contactus')}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ContactUs</a>
+                    <a class="nav-link {{(request()->path()=='contactus') ? 'link-dark' : 'link-light'}}" href="{{route('user.contactus',['id'=>Auth::user()->id])}}" style="font-family:monospace; font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ContactUs</a>
                 </li>
                 @endauth
                 @auth

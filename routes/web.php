@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\UserComplainController;
     Route::get('/', [GuestController::class, 'index'])->name('guest.homepage');
     Route::get('/complain', [ComplainController::class, 'index'])->name('user.complain');
     Route::post('/complain',[ComplainController::class,'store'])->name('user.storecomplain');
-    Route::get("/contactus", [ContactUsController::class, 'index'])->name('user.contactus');
+    Route::get("/contactus/{id}", [ContactUsController::class, 'index'])->name('user.contactus');
     Route::get("/aboutus", [AboutUsController::class, 'index'])->name("user.aboutus");
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('user.profile');
     Route::post('/profile/{id}',[ProfileController::class,'update'])->name('user.profile.update');
