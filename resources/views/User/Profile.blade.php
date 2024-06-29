@@ -76,8 +76,30 @@
 						</div>
 					</div>
 					<div class="row gutters">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<h6 class="mt-3 mb-2 text-primary">Address</h6>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<div class="form-group">
+								<label for="province">Province</label>
+								<select class="form-select" aria-label="Default select example" name='province' id="provinces">
+  									<option value="">Select Province</option>
+									@foreach($provinces as $province)
+  									<option value="{{$province->id}}">{{$province->name}}</option>
+									@endforeach
+								</select>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<div class="form-group">
+								<label for="district">District</label>
+								<select class="form-select" aria-label="Default select example" id="districts" name='district'>
+								</select>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<div class="form-group">
+								<label for="loacallevel">Local Level</label>
+								<select class="form-select" aria-label="Default select example" id="local_level" name='local_level'>
+								</select>
+							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
@@ -89,31 +111,6 @@
 							<div class="form-group">
 								<label for="sTate">Ward</label>
 								<input type="text" class="form-control text-danger" id="sTate" placeholder="State" name="ward" value="{{isset(Auth::user()->ward_no) ? Auth::user()->ward_no : ''}}">
-							</div>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="province">Province</label>
-								<select class="form-select" aria-label="Default select example" id="provinces">
-  									<option value="">Select Province</option>
-									@foreach($provinces as $province)
-  									<option value="{{$province->id}}">{{$province->name}}</option>
-									@endforeach
-								</select>
-							</div>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="district">District</label>
-								<select class="form-select" aria-label="Default select example" id="districts">
-								</select>
-							</div>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="loacallevel">Local Level</label>
-								<select class="form-select" aria-label="Default select example" id="local_level">
-								</select>
 							</div>
 						</div>
 					</div>

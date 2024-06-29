@@ -36,6 +36,9 @@ class ProfileController extends Controller
         $user = User::find($id);
         $user->phone_number = $request->phone_number;
         $user->email=$request->email;
+        $user->province=$request->province;
+        $user->district=$request->district;
+        $user->local_level=$request->local_level;
         $user->address=$request->address;
         $user->ward_no=$request->ward;
         if ($request->hasFile('p_photo')) 
